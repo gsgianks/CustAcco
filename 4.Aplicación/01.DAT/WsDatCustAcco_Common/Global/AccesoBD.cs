@@ -28,7 +28,7 @@ namespace WsDatCustAcco_Common.Global
             }
             catch (Exception ex)
             {
-                return false;
+                return false;  
             }
 
             //conexion.Close();
