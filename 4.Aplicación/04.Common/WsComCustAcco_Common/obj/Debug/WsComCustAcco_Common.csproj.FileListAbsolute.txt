@@ -1,0 +1,6 @@
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\bin\Debug\WsComCustAcco_Common.dll
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\bin\Debug\WsComCustAcco_Common.pdb
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.csprojResolveAssemblyReference.cache
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.csproj.CoreCompileInputs.cache
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.dll
+E:\Proyectos\CustAcco\Aplicacion\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.pdb

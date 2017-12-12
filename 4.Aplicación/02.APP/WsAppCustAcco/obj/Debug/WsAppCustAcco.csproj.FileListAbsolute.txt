@@ -1,0 +1,11 @@
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsAppCustAcco.dll.config
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsAppCustAcco.dll
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsAppCustAcco.pdb
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsAppCustAcco_Common.dll
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsDatCustAcco_Dao.dll
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsDatCustAcco_Dao.pdb
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\bin\WsAppCustAcco_Common.pdb
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\obj\Debug\WsAppCustAcco.csprojResolveAssemblyReference.cache
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\obj\Debug\WsAppCustAcco.csproj.CoreCompileInputs.cache
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\obj\Debug\WsAppCustAcco.dll
+E:\Proyectos\CustAcco\Aplicacion\02.APP\WsAppCustAcco\obj\Debug\WsAppCustAcco.pdb
