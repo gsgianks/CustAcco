@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WsAppCustAcco", "02.APP\WsAppCustAcco\WsAppCustAcco.csproj", "{EA71074E-2722-49DC-AC8E-3A331811C1C5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WB_CustAcco.Web_Common", "03.Web\WB_CustAcco.Web_Common\WB_CustAcco.Web_Common.csproj", "{23F9BCC0-0FEA-4167-8F51-DA85183CDC90}"
+	ProjectSection(ProjectDependencies) = postProject
+		{EA71074E-2722-49DC-AC8E-3A331811C1C5} = {EA71074E-2722-49DC-AC8E-3A331811C1C5}
+	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Common", "01.Common", "{4469293F-42C2-4583-9C2B-EC6B634E1324}"
 EndProject

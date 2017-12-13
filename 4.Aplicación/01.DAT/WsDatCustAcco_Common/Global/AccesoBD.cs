@@ -11,29 +11,29 @@ namespace WsDatCustAcco_Common.Global
     {
         #region [Variables]
 
-        SqlConnection conexion;
+        SqlConnection Conexion;
         
         #endregion [Variables]
         // Se debe crear la clase con la conexión a la base de datos. GianCarlos nos va a ayudar con esto.
 
         public String ProcedimientoMantenimiento { get; set; }
 
-        public bool Conexion()
-        {
+        //public bool Conexion()
+        //{
 
-            try
-            {
-                SqlConnection conexion = new SqlConnection("server=msqlaws.csiftz7i1ill.us-east-1.rds.amazonaws.com,1433; database=BDCustAcco ; integrated security = true");
-                conexion.Open();
-            }
-            catch (Exception ex)
-            {
-                return false;  
-            }
+        //    try
+        //    {
+        //        SqlConnection conexion = new SqlConnection("server=msqlaws.csiftz7i1ill.us-east-1.rds.amazonaws.com,1433; database=BDCustAcco ; integrated security = true");
+        //        conexion.Open();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return false;  
+        //    }
 
-            //conexion.Close();
+        //    //conexion.Close();
 
-            return true;
-        }
+        //    return true;
+        //}
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,8 +9,11 @@ using WsDatCustAcco_Dao.Global;
 
 namespace WsDatCustAcco_Common.Global
 {
-    public class Utilitario
+    public class Utilitario: Conexion
     {
+
+        #region [ObtenerValorSeguro]
+
         public static Boolean ObtenerValorSeguroBoolean(DataRow fila, String columna)
         {
             if(fila[columna] != DBNull.Value)
@@ -178,5 +182,190 @@ namespace WsDatCustAcco_Common.Global
 
             return entidad;
         }
+
+        #endregion [ObtenerValorSeguro]
+
+        
+
+        public static Boolean EjecutarProcedimiento(String nombreProcedimiento, List<ParametroDao> parametros)
+        {
+
+            getConexion();
+            SqlCommand cmd = new SqlCommand();
+            cmd.Connection = conexion;
+            cmd.CommandText = nombreProcedimiento;
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            foreach (ParametroDao parametro in parametros)
+            {
+                cmd.Parameters.AddWithValue(parametro.NombreParametro, parametro.ValorParametro);
+            }
+
+            if (cmd.ExecuteNonQuery() == 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
+        public static DataTable EjecutarProcedimientoDataTable(String nombreProcedimiento, List<ParametroDao> parametros, ref Int16 codigoError, ref String mensajeError)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                if (getConexion())
+                {
+                    SqlCommand cmd = new SqlCommand();
+                    cmd.Connection = conexion;
+                    cmd.CommandText = nombreProcedimiento;
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    foreach (ParametroDao parametro in parametros)
+                    {
+                        cmd.Parameters.AddWithValue(parametro.NombreParametro, parametro.ValorParametro);
+                    }
+                    SqlDataAdapter da = new SqlDataAdapter(cmd);
+                    da.Fill(dt);
+                    cerrarConexion();
+                }
+
+            }
+            catch (SqlException e)
+            {
+                codigoError = 99;
+                mensajeError = "Error no controlado: " + e.Message;
+            }
+            return dt;
+        }
+
+        //private bool SelectOrden(string tabla, string campo, string condicion)
+        //{
+        //    bool existe = false;
+        //    string sqlConStr = "/*cadena de conexion*/";
+        //    string SQL = "SELECT Count(" + campo + ") as numRows FROM " + tabla + " WHERE " + campo + "=@valor;";
+        //    SqlConnection sqlConn = new SqlConnection(sqlConStr);
+        //    SqlCommand sqlCmd = new SqlCommand(SQL, sqlConn);
+        //    SqlDataReader rdr = null;
+        //    try
+        //    {
+        //        sqlConn.Open();
+        //        sqlCmd.Parameters.Add("valor", valor);
+        //        rdr = sqlCmd.ExecuteReader();
+        //        if (rdr.Read())
+        //        {
+        //            int numOrdenes = (int)rdr["numOrdenes"];
+        //            if (numOrdenes > 0) existe = true;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //    }
+        //    finally
+        //    {
+        //        if (rdr != null) rdr.Close();
+        //        sqlConn.Close();
+        //    }
+        //    return existe;
+        //}
+
+        //public DataSet EjecutarProcedimientoDataSet(String nombreProcedimiento, params SqlParameter[] parametros)
+        //{
+        //    DataSet dataSetResultado;
+
+        //    try
+        //    {
+        //        getConexion();
+        //        //SqlCommand cmd = new SqlCommand();
+        //        //cmd.Connection = conexion;
+        //        //cmd.CommandText = nombreProcedimiento;
+        //        //cmd.CommandType = CommandType.StoredProcedure;
+
+        //        dataSetResultado = ExecuteDataset(conexion, CommandType.StoredProcedure, nombreProcedimiento, parametros);
+        //    }
+        //    catch (Exception)
+        //    {
+
+        //        throw;
+        //    }
+
+        //    return dataSetResultado;
+
+        //}
+
+    //    public static DataSet ExecuteDataset(SqlConnection connection, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
+    //    {
+    //        if (connection == null) throw new ArgumentNullException("connection");
+
+    //        // Create a command and prepare it for execution
+    //        SqlCommand cmd = new SqlCommand();
+    //        bool mustCloseConnection = false;
+    //        PrepareCommand(cmd, connection, (SqlTransaction)null, commandType, commandText, commandParameters, out mustCloseConnection);
+
+    //        // Create the DataAdapter & DataSet
+    //        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+    //        {
+    //            DataSet ds = new DataSet();
+
+    //            // Fill the DataSet using default values for DataTable names, etc
+    //            //UtilitariosDal.RegistrarDatosLog(UtilitariosDal.PrepararDatosLog(commandParameters, commandText));
+    //            da.Fill(ds);
+
+    //            // Detach the SqlParameters from the command object, so they can be used again
+    //            cmd.Parameters.Clear();
+
+    //            if (mustCloseConnection)
+    //                connection.Close();
+
+    //            // Return the dataset
+    //            return ds;
+    //        }
+    //    }
+
+
+    //    private static void PrepareCommand(SqlCommand command, SqlConnection connection, SqlTransaction transaction, CommandType commandType, string commandText, SqlParameter[] commandParameters, out bool mustCloseConnection)
+    //    {
+    //        if (command == null) throw new ArgumentNullException("command");
+
+    //        if (commandText == null || commandText.Length == 0) throw new ArgumentNullException("commandText");
+
+    //        // If the provided connection is not open, we will open it
+    //        if (connection.State != ConnectionState.Open)
+    //        {
+    //            mustCloseConnection = true;
+    //            connection.Open();
+    //        }
+    //        else
+    //        {
+    //            mustCloseConnection = false;
+    //        }
+
+    //        // Associate the connection with the command
+    //        command.Connection = connection;
+
+    //        // Set the command text (stored procedure name or SQL statement)
+    //        command.CommandText = commandText;
+
+    //        // If we were provided a transaction, assign it
+    //        if (transaction != null)
+    //        {
+    //            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+    //            command.Transaction = transaction;
+    //        }
+
+    //        // Set the command type
+    //        command.CommandType = commandType;
+
+    //        command.CommandTimeout = 0;
+
+    //        // Attach the command parameters if they are provided
+    //        if (commandParameters != null)
+    //        {
+    //            AttachParameters(command, commandParameters);
+    //        }
+    //        return;
+    //    }
     }
 }

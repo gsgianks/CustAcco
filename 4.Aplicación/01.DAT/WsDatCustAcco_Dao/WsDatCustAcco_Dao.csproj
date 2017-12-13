@@ -44,6 +44,7 @@
     <Compile Include="Global\BaseBusquedaDao.cs" />
     <Compile Include="Global\BaseDao.cs" />
     <Compile Include="Global\IDebeSerializar.cs" />
+    <Compile Include="Global\ParametroDao.cs" />
     <Compile Include="Global\ResultadoEjecucion.cs" />
     <Compile Include="ModuloGeneral\ProveedorDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

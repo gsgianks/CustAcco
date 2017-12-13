@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ModuloGeneral\ProveedorApp.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +52,13 @@
       <Project>{16c539f2-f89c-47e4-be7d-a219be7f9999}</Project>
       <Name>WsDatCustAcco_Dao</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\04.Common\WsComCustAcco_Common\WsComCustAcco_Common.csproj">
+      <Project>{C5184A56-27D9-46B0-9B28-6BFB53C7BB25}</Project>
+      <Name>WsComCustAcco_Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Global\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="a943aeb6-1e78-43aa-a399-e8f0449de887" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50307/GeneralAppService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="GeneralAppService.disco" MetadataType="Disco" ID="f0c25b65-943d-4bf4-b4e3-388fc54fe85d" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?disco" />
+    <MetadataFile FileName="GeneralAppService.wsdl" MetadataType="Wsdl" ID="f52ec499-8f3d-4a8f-8921-94636d675a54" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?wsdl" />
+    <MetadataFile FileName="GeneralAppService.xsd" MetadataType="Schema" ID="96b1e297-a70d-4c32-8263-d811add40eb0" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?xsd=xsd2" />
+    <MetadataFile FileName="GeneralAppService1.xsd" MetadataType="Schema" ID="9aa6e47c-2e6a-4c6e-92df-5db31e52c372" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?xsd=xsd3" />
+    <MetadataFile FileName="GeneralAppService2.xsd" MetadataType="Schema" ID="f8572fee-4608-4029-ba6f-18b4a5863101" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?xsd=xsd0" />
+    <MetadataFile FileName="GeneralAppService3.xsd" MetadataType="Schema" ID="3b51057a-771b-4c92-b628-41ab16ab4475" SourceId="1" SourceUrl="http://localhost:50307/GeneralAppService.svc?xsd=xsd1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

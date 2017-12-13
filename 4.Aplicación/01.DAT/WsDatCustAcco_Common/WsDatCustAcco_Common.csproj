@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Global\AccesoBD.cs" />
+    <Compile Include="Global\Conexion.cs" />
     <Compile Include="Global\Enumeradores.cs" />
     <Compile Include="Global\RegistrarBitacoras.cs" />
     <Compile Include="Global\Utilitario.cs" />
@@ -48,6 +49,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\04.Common\WsComCustAcco_Common\WsComCustAcco_Common.csproj">
+      <Project>{C5184A56-27D9-46B0-9B28-6BFB53C7BB25}</Project>
+      <Name>WsComCustAcco_Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\WsDatCustAcco_Dao\WsDatCustAcco_Dao.csproj">
       <Project>{16c539f2-f89c-47e4-be7d-a219be7f9999}</Project>
       <Name>WsDatCustAcco_Dao</Name>

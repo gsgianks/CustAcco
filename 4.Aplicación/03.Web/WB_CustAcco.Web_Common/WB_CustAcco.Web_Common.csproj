@@ -32,6 +32,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -40,7 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ClientServices\GeneralAppClientService.cs" />
+    <Compile Include="Connected Services\GeneralAppService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="ModuloGeneral\ProveedorHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -48,6 +56,52 @@
       <Project>{c5184a56-27d9-46b0-9b28-6bfb53c7bb25}</Project>
       <Name>WsComCustAcco_Common</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Connected Services\GeneralAppService\GeneralAppService.wsdl" />
+    <None Include="Connected Services\GeneralAppService\GeneralAppService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneralAppService\GeneralAppService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneralAppService\GeneralAppService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneralAppService\GeneralAppService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GeneralAppService\WB_CustAcco.Web_Common.GeneralAppService.ObtenerProveedorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeneralAppService\WB_CustAcco.Web_Common.GeneralAppService.ProveedorDao.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\GeneralAppService\WB_CustAcco.Web_Common.GeneralAppService.ResultadoEjecucion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GeneralAppService\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneralAppService\GeneralAppService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneralAppService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneralAppService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Connected Services\GeneralAppService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

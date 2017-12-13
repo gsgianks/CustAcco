@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50307/GeneralAppService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" />
+  <xs:import schemaLocation="http://localhost:50307/GeneralAppService.svc?xsd=xsd3" namespace="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.Global" />
+  <xs:element name="IngresarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="solicitudDao" nillable="true" type="q1:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="IngresarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="IngresarProveedorResult" nillable="true" type="q2:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="solicitudDao" nillable="true" type="q3:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EditarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="EditarProveedorResult" nillable="true" type="q4:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="solicitudDao" nillable="true" type="q5:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="EliminarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.Global" minOccurs="0" name="EliminarProveedorResult" nillable="true" type="q6:ResultadoEjecucion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="solicitudDao" nillable="true" type="q7:ProveedorDao" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ActivarProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.Global" minOccurs="0" name="ActivarProveedorResult" nillable="true" type="q8:ResultadoEjecucion" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProveedor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="codigoProveedor" nillable="true" type="xs:unsignedByte" />
+        <xs:element minOccurs="0" name="codigoError" type="xs:short" />
+        <xs:element minOccurs="0" name="mensajeError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ObtenerProveedorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q9="http://schemas.datacontract.org/2004/07/WsDatCustAcco_Dao.ModuloGeneral" minOccurs="0" name="ObtenerProveedorResult" nillable="true" type="q9:ProveedorDao" />
+        <xs:element minOccurs="0" name="codigoError" type="xs:short" />
+        <xs:element minOccurs="0" name="mensajeError" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

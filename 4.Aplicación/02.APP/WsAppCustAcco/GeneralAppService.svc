@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="WsAppCustAcco.GeneralAppService" CodeBehind="GeneralAppService.svc.cs" %>
