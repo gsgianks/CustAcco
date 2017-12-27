@@ -9,3 +9,4 @@ E:\Proyectos\CustAcco\4.Aplicación\04.Common\WsComCustAcco_Common\bin\Debug\WsC
 E:\Proyectos\CustAcco\4.Aplicación\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.csproj.CoreCompileInputs.cache
 E:\Proyectos\CustAcco\4.Aplicación\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.dll
 E:\Proyectos\CustAcco\4.Aplicación\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.pdb
+E:\Proyectos\CustAcco\4.Aplicación\04.Common\WsComCustAcco_Common\obj\Debug\WsComCustAcco_Common.csprojResolveAssemblyReference.cache
