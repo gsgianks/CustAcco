@@ -1,0 +1,110 @@
+﻿@using WB_CustAcco.Web.Models.ModuloGeneral;
+@using WB_CustAcco.Web.Utilities;
+
+@model ProveedorModel
+
+@{
+    ViewBag.Title = EtiquetasUtility.TITU_GEN_PRO_PROVEEDORES;
+}
+
+<h2>Editar</h2>
+<div>
+    @using (Html.BeginForm(null, null, FormMethod.Post))
+    {
+        <table>
+            <tr id="trCodigo">
+                <td>
+                    @Html.LabelFor(model => model.CodigoProveedor)
+                </td>
+                <td>
+                    <div>
+                        @EtiquetasUtility.ETIQ_SIS_GLOB_REQUERIDO
+                    </div>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.CodigoProveedor, new { @readonly = "readonly" })
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.CodigoProveedor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.NombreProveedor)
+                </td>
+                <td>
+                    <div>
+                        @EtiquetasUtility.ETIQ_SIS_GLOB_REQUERIDO
+                    </div>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.NombreProveedor, new { @maxlength = 120 })
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.NombreProveedor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.AliasProveedor)
+                </td>
+                <td>
+                    @EtiquetasUtility.ETIQ_SIS_GLOB_REQUERIDO
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.AliasProveedor, new { @maxlength = 120 })
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.AliasProveedor)
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.LabelFor(model => model.TelefonoProveedor)
+                </td>
+                <td>
+                    <div>
+                        @EtiquetasUtility.ETIQ_SIS_GLOB_REQUERIDO
+                    </div>
+                </td>
+                <td>
+                    @Html.TextBoxFor(model => model.TelefonoProveedor)
+                </td>
+                <td>
+                    @Html.ValidationMessageFor(model => model.TelefonoProveedor)
+                </td>
+            </tr>
+        </table>
+
+        <table>
+            <tr>
+                <td>
+                    <button id="btnRegresar" type="button">@EtiquetasUtility.BOTO_SIS_GLOB_REGRESAR</button>
+                    <button id="btnGuardar" type="submit">@EtiquetasUtility.BOTO_SIS_GLOB_GUARDAR</button>
+                    <button id="btnLimpiar" type="button">@EtiquetasUtility.BOTO_SIS_GLOB_LIMPIAR</button>
+                    <button id="btnAuditoria" type="button">@EtiquetasUtility.BOTO_SIS_GLOB_AUDITORIA</button>
+                </td>
+            </tr>
+        </table>
+    }
+</div>
+
+<script>
+    $(document).ready(function () {
+        $('#trCodigo').hide();
+
+        var codigo = $('#CodigoProveedor').val();        
+
+        if (codigo == 0 || codigo == '' || codigo == null || codigo == undefined) {
+            $('#btnAuditoria').hide();
+        }
+
+        $('#btnRegresar').click(function () {
+            var url = '@Url.Action("Buscar","Proveedor")';
+
+            alert(url);
+
+            //window.location.href = url;
+        });
+    });    
+</script>

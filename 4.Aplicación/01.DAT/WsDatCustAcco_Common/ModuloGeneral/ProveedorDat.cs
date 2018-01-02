@@ -19,7 +19,7 @@ namespace WsDatCustAcco_Common.ModuloGeneral
 
         public ProveedorDat()
         {
-            ProcedimientoMantenimiento = "Pa_gen_Mantenimiento_Proveedor";
+            ProcedimientoMantenimiento = "Pa_Mantenimiento_genProveedores";
         }
 
         #endregion [Constructores]
@@ -67,10 +67,13 @@ namespace WsDatCustAcco_Common.ModuloGeneral
             {
                 List<ParametroDao> parametros = new List<ParametroDao>();
 
-                parametros.Add(new ParametroDao { NombreParametro = "@pTipoOperacionMantenimiento", ValorParametro = TipoOperacionMantenimiento.Obtener, TipoDato = DbType.Int16 });
-                parametros.Add(new ParametroDao { NombreParametro = "@pCodigoProveedor", ValorParametro = solicitudDao.NombreProveedor, TipoDato = DbType.String });
-                parametros.Add(new ParametroDao { NombreParametro = "@", ValorParametro=solicitudDao.AliasProveedor, TipoDato=DbType.String});
-                parametros.Add(new ParametroDao { NombreParametro = "@", ValorParametro = solicitudDao.TelefonoProveedor, TipoDato = DbType.String });
+                parametros.Add(new ParametroDao { NombreParametro = "@pnumOperacionMantenimiento", ValorParametro = TipoOperacionMantenimiento.Obtener, TipoDato = DbType.Int16 });
+                parametros.Add(new ParametroDao { NombreParametro = "@pnomProveedor", ValorParametro = solicitudDao.NombreProveedor, TipoDato = DbType.String });
+                parametros.Add(new ParametroDao { NombreParametro = "@pnomAliasProveedor", ValorParametro=solicitudDao.AliasProveedor, TipoDato=DbType.String});
+                parametros.Add(new ParametroDao { NombreParametro = "@pdesTelefono", ValorParametro = solicitudDao.TelefonoProveedor, TipoDato = DbType.String });
+                parametros.Add(new ParametroDao { NombreParametro = "@pcocSesion", ValorParametro = solicitudDao.CodigoSesion, TipoDato = DbType.String });
+                parametros.Add(new ParametroDao { NombreParametro = "@pusrIngreso", ValorParametro = "Alex", TipoDato = DbType.String });
+                parametros.Add(new ParametroDao { NombreParametro = "@pcocIpIngreso", ValorParametro = "127.0.0.1", TipoDato = DbType.String });
 
                 dt = Utilitario.EjecutarProcedimientoDataTable(ProcedimientoMantenimiento, parametros, ref codigoError, ref mensajeError);
 

@@ -111,10 +111,11 @@ namespace WB_CustAcco.Web.Models.ModuloGeneral
         public ProveedorModel Ingresar()
         {
             ProveedorModel modelo = new ProveedorModel();
-            ProveedorDao dao = new ProveedorDao();
+            ProveedorDao dao = ConvertirADao();
 
             try
-            {
+            { 
+
                 ProveedorDao resultado = ProveedorHelper.Instanciar().Ingresar(dao);
 
                 modelo = ConvertirAModelo(resultado);
@@ -277,6 +278,13 @@ namespace WB_CustAcco.Web.Models.ModuloGeneral
 
         #endregion Constructores
 
+        #region [Funciones de la clase]
 
+        //public ProveedorBusquedaDao ConvertirADao()
+        //{
+
+        //}
+
+        #endregion [Funciones de la clase]
     }
 }

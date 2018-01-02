@@ -11,6 +11,7 @@ E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\bin\Debug\WB_C
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\bin\Debug\WB_CustAcco.Web_Common.pdb
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\bin\Debug\WsComCustAcco_Common.dll
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\bin\Debug\WsComCustAcco_Common.pdb
+E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\obj\Debug\WB_CustAcco.Web_Common.csprojResolveAssemblyReference.cache
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\obj\Debug\WB_CustAcco.Web_Common.csproj.CoreCompileInputs.cache
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\obj\Debug\WB_CustAcco.Web_Common.dll
 E:\Proyectos\CustAcco\4.Aplicación\03.Web\WB_CustAcco.Web_Common\obj\Debug\WB_CustAcco.Web_Common.pdb
