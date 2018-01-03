@@ -19,7 +19,9 @@ namespace WsDatCustAcco_Common.Global
 
             try
             {
-                conexion = new SqlConnection("server=msqlaws.csiftz7i1ill.us-east-1.rds.amazonaws.com,1433; database=BDCustAcco ; integrated security = true");
+                //conexion = new SqlConnection("server=msqlaws.csiftz7i1ill.us-east-1.rds.amazonaws.com,1433; database=BDCustAcco ; integrated security = true");
+
+                conexion = new SqlConnection("server=msqlaws.csiftz7i1ill.us-east-1.rds.amazonaws.com,1433;database=BDCustAcco;Integrated Security=False;User Id=admin;Password=abc..123;MultipleActiveResultSets=True");
                 conexion.Open();
                 connection_open = true;
             }
