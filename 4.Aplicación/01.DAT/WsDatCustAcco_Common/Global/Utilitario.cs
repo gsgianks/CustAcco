@@ -212,33 +212,71 @@ namespace WsDatCustAcco_Common.Global
 
         }
 
-        public static DataTable EjecutarProcedimientoDataTable(String nombreProcedimiento, List<ParametroDao> parametros, ref Int16 codigoError, ref String mensajeError)
+        //public static DataTable EjecutarProcedimientoDataTable(String nombreProcedimiento, List<ParametroDao> parametros, ref Int16 codigoError, ref String mensajeError)
+        //{
+        //    DataTable dt = new DataTable();
+        //    try
+        //    {
+        //        if (getConexion())
+        //        {
+        //            SqlCommand cmd = new SqlCommand();
+        //            cmd.Connection = conexion;
+        //            cmd.CommandText = nombreProcedimiento;
+        //            cmd.CommandType = CommandType.StoredProcedure;
+        //            foreach (ParametroDao parametro in parametros)
+        //            {
+        //                cmd.Parameters.AddWithValue(parametro.NombreParametro, parametro.ValorParametro);
+        //            }
+        //            SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //            da.Fill(dt);
+        //            cerrarConexion();
+        //        }
+
+        //    }
+        //    catch (SqlException e)
+        //    {
+        //        codigoError = 99;
+        //        mensajeError = "Error no controlado: " + e.Message;
+        //    }
+        //    return dt;
+        //}
+
+        public static Boolean EjecutarProcedimientoDataTable(String nombreProcedimiento, List<ParametroDao> parametros, ref Int16 codigoError, ref String mensajeError) //String fechaDua, Int16 angoDua, String numeroDua, String modalidad, String idRegimen, String idAduana, String idAduanaIngresoDestino, String tipoIdentificacion, String numeroIdentificacion, String tipoIdentificadorDeclarante, String numeroIdentificacionDeclarante, Int16 idTransporte, Int64 sumatoriaCantidadBultos, String validacionValorAduaneroCIF_FOB, float totalPesoBruto, float totalPesoNeto, Double tipoCambioDolar, Double totalModedasColones, Double impuestoTotal, Int64 estado)
         {
-            DataTable dt = new DataTable();
+            Boolean resultado = false;
+            //SqlCommand command = ClsConexion.GET_CONEXION().CreateCommand();
+            getConexion();
             try
             {
-                if (getConexion())
+                /* ClsEmpleado empleado = new ClsEmpleado();
+                 command.CommandText = "paInsertarActualizarDUA";
+                 command.CommandType = System.Data.CommandType.StoredProcedure;
+                 command.Parameters.Clear();*/
+
+
+                //conexion.Open();
+                //comando
+                SqlCommand command = new SqlCommand();
+                command.CommandText = nombreProcedimiento;
+                command.CommandType = System.Data.CommandType.StoredProcedure;
+                command.Connection = conexion;
+
+                foreach (ParametroDao parametro in parametros)
                 {
-                    SqlCommand cmd = new SqlCommand();
-                    cmd.Connection = conexion;
-                    cmd.CommandText = nombreProcedimiento;
-                    cmd.CommandType = CommandType.StoredProcedure;
-                    foreach (ParametroDao parametro in parametros)
-                    {
-                        cmd.Parameters.AddWithValue(parametro.NombreParametro, parametro.ValorParametro);
-                    }
-                    SqlDataAdapter da = new SqlDataAdapter(cmd);
-                    da.Fill(dt);
-                    cerrarConexion();
+                    command.Parameters.AddWithValue(parametro.NombreParametro, parametro.ValorParametro);
                 }
 
+                command.ExecuteNonQuery();
+
+                SqlDataReader RESULTADO = ((SqlDataReader)command.ExecuteReader());
+                resultado = true;
             }
-            catch (SqlException e)
+            catch (Exception ex)
             {
-                codigoError = 99;
-                mensajeError = "Error no controlado: " + e.Message;
+                throw ex;
             }
-            return dt;
+
+            return resultado;
         }
 
         //private bool SelectOrden(string tabla, string campo, string condicion)
@@ -295,77 +333,77 @@ namespace WsDatCustAcco_Common.Global
 
         //}
 
-    //    public static DataSet ExecuteDataset(SqlConnection connection, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
-    //    {
-    //        if (connection == null) throw new ArgumentNullException("connection");
+        //    public static DataSet ExecuteDataset(SqlConnection connection, CommandType commandType, string commandText, params SqlParameter[] commandParameters)
+        //    {
+        //        if (connection == null) throw new ArgumentNullException("connection");
 
-    //        // Create a command and prepare it for execution
-    //        SqlCommand cmd = new SqlCommand();
-    //        bool mustCloseConnection = false;
-    //        PrepareCommand(cmd, connection, (SqlTransaction)null, commandType, commandText, commandParameters, out mustCloseConnection);
+        //        // Create a command and prepare it for execution
+        //        SqlCommand cmd = new SqlCommand();
+        //        bool mustCloseConnection = false;
+        //        PrepareCommand(cmd, connection, (SqlTransaction)null, commandType, commandText, commandParameters, out mustCloseConnection);
 
-    //        // Create the DataAdapter & DataSet
-    //        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
-    //        {
-    //            DataSet ds = new DataSet();
+        //        // Create the DataAdapter & DataSet
+        //        using (SqlDataAdapter da = new SqlDataAdapter(cmd))
+        //        {
+        //            DataSet ds = new DataSet();
 
-    //            // Fill the DataSet using default values for DataTable names, etc
-    //            //UtilitariosDal.RegistrarDatosLog(UtilitariosDal.PrepararDatosLog(commandParameters, commandText));
-    //            da.Fill(ds);
+        //            // Fill the DataSet using default values for DataTable names, etc
+        //            //UtilitariosDal.RegistrarDatosLog(UtilitariosDal.PrepararDatosLog(commandParameters, commandText));
+        //            da.Fill(ds);
 
-    //            // Detach the SqlParameters from the command object, so they can be used again
-    //            cmd.Parameters.Clear();
+        //            // Detach the SqlParameters from the command object, so they can be used again
+        //            cmd.Parameters.Clear();
 
-    //            if (mustCloseConnection)
-    //                connection.Close();
+        //            if (mustCloseConnection)
+        //                connection.Close();
 
-    //            // Return the dataset
-    //            return ds;
-    //        }
-    //    }
+        //            // Return the dataset
+        //            return ds;
+        //        }
+        //    }
 
 
-    //    private static void PrepareCommand(SqlCommand command, SqlConnection connection, SqlTransaction transaction, CommandType commandType, string commandText, SqlParameter[] commandParameters, out bool mustCloseConnection)
-    //    {
-    //        if (command == null) throw new ArgumentNullException("command");
+        //    private static void PrepareCommand(SqlCommand command, SqlConnection connection, SqlTransaction transaction, CommandType commandType, string commandText, SqlParameter[] commandParameters, out bool mustCloseConnection)
+        //    {
+        //        if (command == null) throw new ArgumentNullException("command");
 
-    //        if (commandText == null || commandText.Length == 0) throw new ArgumentNullException("commandText");
+        //        if (commandText == null || commandText.Length == 0) throw new ArgumentNullException("commandText");
 
-    //        // If the provided connection is not open, we will open it
-    //        if (connection.State != ConnectionState.Open)
-    //        {
-    //            mustCloseConnection = true;
-    //            connection.Open();
-    //        }
-    //        else
-    //        {
-    //            mustCloseConnection = false;
-    //        }
+        //        // If the provided connection is not open, we will open it
+        //        if (connection.State != ConnectionState.Open)
+        //        {
+        //            mustCloseConnection = true;
+        //            connection.Open();
+        //        }
+        //        else
+        //        {
+        //            mustCloseConnection = false;
+        //        }
 
-    //        // Associate the connection with the command
-    //        command.Connection = connection;
+        //        // Associate the connection with the command
+        //        command.Connection = connection;
 
-    //        // Set the command text (stored procedure name or SQL statement)
-    //        command.CommandText = commandText;
+        //        // Set the command text (stored procedure name or SQL statement)
+        //        command.CommandText = commandText;
 
-    //        // If we were provided a transaction, assign it
-    //        if (transaction != null)
-    //        {
-    //            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
-    //            command.Transaction = transaction;
-    //        }
+        //        // If we were provided a transaction, assign it
+        //        if (transaction != null)
+        //        {
+        //            if (transaction.Connection == null) throw new ArgumentException("The transaction was rollbacked or commited, please provide an open transaction.", "transaction");
+        //            command.Transaction = transaction;
+        //        }
 
-    //        // Set the command type
-    //        command.CommandType = commandType;
+        //        // Set the command type
+        //        command.CommandType = commandType;
 
-    //        command.CommandTimeout = 0;
+        //        command.CommandTimeout = 0;
 
-    //        // Attach the command parameters if they are provided
-    //        if (commandParameters != null)
-    //        {
-    //            AttachParameters(command, commandParameters);
-    //        }
-    //        return;
-    //    }
+        //        // Attach the command parameters if they are provided
+        //        if (commandParameters != null)
+        //        {
+        //            AttachParameters(command, commandParameters);
+        //        }
+        //        return;
+        //    }
     }
 }

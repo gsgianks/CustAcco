@@ -67,7 +67,7 @@ namespace WsDatCustAcco_Common.ModuloGeneral
             {
                 List<ParametroDao> parametros = new List<ParametroDao>();
 
-                parametros.Add(new ParametroDao { NombreParametro = "@pnumOperacionMantenimiento", ValorParametro = TipoOperacionMantenimiento.Obtener, TipoDato = DbType.Int16 });
+                parametros.Add(new ParametroDao { NombreParametro = "@pnumOperacionMantenimiento", ValorParametro = TipoOperacionMantenimiento.Insertar, TipoDato = DbType.Int16 });
                 parametros.Add(new ParametroDao { NombreParametro = "@pnomProveedor", ValorParametro = solicitudDao.NombreProveedor, TipoDato = DbType.String });
                 parametros.Add(new ParametroDao { NombreParametro = "@pnomAliasProveedor", ValorParametro=solicitudDao.AliasProveedor, TipoDato=DbType.String});
                 parametros.Add(new ParametroDao { NombreParametro = "@pdesTelefono", ValorParametro = solicitudDao.TelefonoProveedor, TipoDato = DbType.String });
@@ -75,7 +75,7 @@ namespace WsDatCustAcco_Common.ModuloGeneral
                 parametros.Add(new ParametroDao { NombreParametro = "@pusrIngreso", ValorParametro = "Alex", TipoDato = DbType.String });
                 parametros.Add(new ParametroDao { NombreParametro = "@pcocIpIngreso", ValorParametro = "127.0.0.1", TipoDato = DbType.String });
 
-                dt = Utilitario.EjecutarProcedimientoDataTable(ProcedimientoMantenimiento, parametros, ref codigoError, ref mensajeError);
+                Utilitario.EjecutarProcedimientoDataTable(ProcedimientoMantenimiento, parametros, ref codigoError, ref mensajeError);
 
                 if (codigoError == 0)
                 {
@@ -121,7 +121,7 @@ namespace WsDatCustAcco_Common.ModuloGeneral
                 parametros.Add(new ParametroDao { NombreParametro = "@", ValorParametro = solicitudDao.AliasProveedor, TipoDato = DbType.String });
                 parametros.Add(new ParametroDao { NombreParametro = "@", ValorParametro = solicitudDao.TelefonoProveedor, TipoDato = DbType.String });
 
-                dt = Utilitario.EjecutarProcedimientoDataTable(procedimiento, parametros, ref codigoError, ref mensajeError);
+                Utilitario.EjecutarProcedimientoDataTable(procedimiento, parametros, ref codigoError, ref mensajeError);
 
                 if (codigoError == 0)
                 {
@@ -225,18 +225,18 @@ namespace WsDatCustAcco_Common.ModuloGeneral
                 parametros.Add(new ParametroDao { NombreParametro = "@pTipoOperacionMantenimiento", ValorParametro = TipoOperacionMantenimiento.Obtener, TipoDato = DbType.Int16 });
                 parametros.Add(new ParametroDao { NombreParametro = "@pcodigo_Proveedor", ValorParametro = codigo_Proveedor, TipoDato = DbType.Byte });
 
-                DataTable resultado = Utilitario.EjecutarProcedimientoDataTable(ProcedimientoMantenimiento, parametros, ref codigoError, ref mensajeError);
+                Utilitario.EjecutarProcedimientoDataTable(ProcedimientoMantenimiento, parametros, ref codigoError, ref mensajeError);
 
-                if (codigoError == 0)
-                {
-                    if (resultado.Rows.Count > 0)
-                    {
-                        foreach (DataRow fila in resultado.Rows)
-                        {
-                            resultadoDao = ObtenerDesdeDataRow(fila);
-                        }
-                    }
-                }
+                //if (codigoError == 0)
+                //{
+                //    if (resultado.Rows.Count > 0)
+                //    {
+                //        foreach (DataRow fila in resultado.Rows)
+                //        {
+                //            resultadoDao = ObtenerDesdeDataRow(fila);
+                //        }
+                //    }
+                //}
             }
             catch (Exception ex)
             {
