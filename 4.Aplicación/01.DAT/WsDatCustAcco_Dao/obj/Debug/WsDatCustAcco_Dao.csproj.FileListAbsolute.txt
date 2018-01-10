@@ -4,3 +4,9 @@ E:\Proyectos\CustAcco\Aplicacion\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcc
 E:\Proyectos\CustAcco\Aplicacion\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.csproj.CoreCompileInputs.cache
 E:\Proyectos\CustAcco\Aplicacion\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.dll
 E:\Proyectos\CustAcco\Aplicacion\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.pdb
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\bin\Debug\WsDatCustAcco_Dao.dll
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\bin\Debug\WsDatCustAcco_Dao.pdb
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.csprojResolveAssemblyReference.cache
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.csproj.CoreCompileInputs.cache
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.dll
+C:\Proyectos\CustAcco\4.Aplicación\01.DAT\WsDatCustAcco_Dao\obj\Debug\WsDatCustAcco_Dao.pdb

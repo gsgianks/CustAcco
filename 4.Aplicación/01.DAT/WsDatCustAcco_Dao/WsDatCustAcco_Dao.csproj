@@ -46,6 +46,7 @@
     <Compile Include="Global\IDebeSerializar.cs" />
     <Compile Include="Global\ResultadoEjecucion.cs" />
     <Compile Include="ModuloGeneral\ProveedorDao.cs" />
+    <Compile Include="ModuloSeguridad\UsuarioDao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
