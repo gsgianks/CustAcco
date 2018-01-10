@@ -101,6 +101,8 @@ namespace WB_CustAcco.Web.Models.ModuloGeneral
             dao.TelefonoProveedor = this.TelefonoProveedor;
             dao.EstadoProveedor = this.EstadoProveedor;
 
+            dao.CodigoSesion = this.CodigoSesion;
+
             return dao;
         }
 
