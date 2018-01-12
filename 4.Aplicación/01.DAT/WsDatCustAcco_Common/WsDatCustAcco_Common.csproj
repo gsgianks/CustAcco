@@ -46,6 +46,7 @@
     <Compile Include="Global\RegistrarBitacoras.cs" />
     <Compile Include="Global\Utilitario.cs" />
     <Compile Include="ModuloGeneral\ProveedorDat.cs" />
+    <Compile Include="ModuloSeguridad\UsuarioDat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
